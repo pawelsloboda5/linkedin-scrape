@@ -1,0 +1,170 @@
+Azure OpenAI Chat Completions API Guide
+Overview
+The Azure OpenAI Chat Completions API generates AI responses based on conversational context. It supports models like GPT-3.5-Turbo and GPT-4.
+
+Authentication Methods
+Azure OpenAI supports two authentication methods:
+
+API Key: Set in the api-key HTTP header.
+
+Azure AD Token: Set in the Authorization HTTP header as a Bearer token (Audience: https://cognitiveservices.azure.com/).
+
+Endpoint URL Format
+Base URL:
+
+php-template
+
+POST https://<resource-name>.openai.azure.com/openai/deployments/<deployment-id>/chat/completions?api-version=<api-version>
+Example:
+
+bash
+
+POST https://my-openai.openai.azure.com/openai/deployments/gpt35chat/chat/completions?api-version=2024-10-21
+<resource-name>: Your Azure OpenAI resource name.
+
+<deployment-id>: Model deployment instance name (e.g., gpt35chat).
+
+api-version: Required query parameter (e.g., 2024-10-21).
+
+Required HTTP Headers
+Header	Value
+api-key (if using API Key auth)	Your Azure OpenAI API key
+Authorization (if using Azure AD auth)	Bearer <access_token>
+Content-Type	application/json
+Chat Completions Request Body Parameters
+Parameter	Type	Required	Default	Description
+messages	Array	Yes	N/A	Conversation messages array (see Message Format below).
+temperature	Number	No	1	Randomness (0.0 to 2.0); higher is more creative.
+top_p	Number	No	1	Controls cumulative probability mass cutoff for sampling.
+max_tokens	Integer	No	unset	Maximum tokens for response.
+max_completion_tokens	Integer	No	unset	Advanced limit including internal reasoning tokens (e.g., GPT-4o models).
+n	Integer	No	1	Number of completion variants.
+stream	Boolean	No	false	Stream incremental responses if true.
+stop	String or Array	No	unset	Stop token(s).
+presence_penalty	Number	No	0	Penalty for introducing new topics (-2.0 to 2.0).
+frequency_penalty	Number	No	0	Penalty for repetition (-2.0 to 2.0).
+logit_bias	Object	No	unset	Token probability adjustments (biases).
+user	String	No	unset	Identifier for tracking users.
+logprobs	Boolean	No	false	Include log probabilities for tokens.
+top_logprobs	Integer	No	unset	Number of token alternatives to log probabilities for (max 20).
+data_sources	Array	No	unset	External data sources (Azure-specific Chat Extensions).
+tools	Array	No	unset	Functions (tools) definitions (preferred over deprecated functions).
+tool_choice	String/Object	No	unset	Function-calling strategy (none, auto, required, or specific function).
+parallel_tool_calls	Boolean	No	true	Allow multiple parallel function calls.
+response_format	Object	No	unset	Response structure (text, json_object, or json_schema).
+seed	Integer	No	unset	Seed for deterministic output (beta feature).
+Message Format
+Each message is a JSON object with fields:
+
+role: "system", "user", "assistant", or "tool".
+
+content: Text or JSON output from a tool/function.
+
+name (optional): Identifier for message sender (max 64 characters).
+
+Response Format (Non-streaming)
+Example response JSON:
+
+json
+
+{
+  "id": "chatcmpl-<id>",
+  "object": "chat.completion",
+  "created": 1678552438,
+  "model": "<model-name>",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<response text>",
+        "tool_calls": [ ... ] 
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 42,
+    "completion_tokens": 128,
+    "total_tokens": 170
+  }
+}
+Response Fields:
+
+id: Unique completion ID.
+
+object: Always "chat.completion" for non-streamed responses.
+
+created: Timestamp (Unix epoch).
+
+model: Model used (e.g., "gpt-4").
+
+choices: Array of generated completions.
+
+usage: Token usage (prompt_tokens, completion_tokens, total_tokens).
+
+system_fingerprint: Optional; indicates model configuration version.
+
+Finish Reasons (choices[].finish_reason)
+"stop": Model completed normally.
+
+"length": Reached token limit.
+
+"function_call": Model made a function call.
+
+"content_filter": Triggered content filter.
+
+Streaming Responses (stream=true)
+Sent incrementally as SSE events:
+
+data: {"id":"...","choices":[{"delta":{"content":"Hello"}}]}
+data: [DONE]
+Assemble content by concatenating deltas.
+
+Advanced Use Cases
+Function Calling (Tools)
+Define external functions in the tools array.
+
+Model returns function calls in tool_calls field.
+
+Execute function externally, return results via new message with "role": "tool".
+
+Structured Output (JSON mode)
+Force responses as JSON:
+
+response_format:
+
+"json_object": simple JSON response.
+
+"json_schema": JSON adhering to specified schema.
+
+Example schema-based response:
+
+
+{
+  "country": "France",
+  "population": 67390000,
+  "area": {
+    "value": 551695,
+    "unit": "km²"
+  }
+}
+Ensure prompts explicitly mention "JSON" to avoid errors.
+
+Error Handling
+Status	Description	Resolution
+400	Bad request (format, parameters)	Verify JSON structure
+401	Unauthorized	Check API Key/Azure AD token
+403	Forbidden	Check resource access/config
+404	Deployment not found	Verify <deployment-id>
+429	Too many requests (rate limit)	Implement retries, backoff
+500	Internal server error	Retry later or contact support
+503	Service unavailable	Temporary; retry later
+Best Practices to Avoid Errors
+Verify deployment ID and API version.
+
+Validate JSON payloads.
+
+Monitor token usage.
+
+Test incrementally, from simple to complex.

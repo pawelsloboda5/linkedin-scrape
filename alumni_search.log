@@ -1,0 +1,388 @@
+2025-05-05 15:35:26,164 - INFO - OpenAI API key found in environment variables
+2025-05-05 15:35:26,164 - INFO - Starting LinkedIn Screenshot Alumni Scraper
+2025-05-05 15:35:26,164 - INFO - Using ChromeDriver from: C:\WebDriver\bin\chromedriver.exe
+2025-05-05 15:35:27,182 - INFO - ChromeDriver initialized successfully
+2025-05-05 15:35:32,670 - INFO - Successfully logged in to LinkedIn
+2025-05-05 15:35:37,671 - INFO - Searching for alumni of: National Defense University
+2025-05-05 15:35:51,395 - WARNING - Filter UI may have changed, trying direct search: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF77632F015+77893]
+	GetHandleVerifier [0x00007FF77632F070+77984]
+	(No symbol) [0x00007FF7760F91BA]
+	(No symbol) [0x00007FF77614F16D]
+	(No symbol) [0x00007FF77614F41C]
+	(No symbol) [0x00007FF7761A2237]
+	(No symbol) [0x00007FF77617716F]
+	(No symbol) [0x00007FF77619F07F]
+	(No symbol) [0x00007FF776176F03]
+	(No symbol) [0x00007FF776140328]
+	(No symbol) [0x00007FF776141093]
+	GetHandleVerifier [0x00007FF7765E7BDD+2931725]
+	GetHandleVerifier [0x00007FF7765E21A2+2908626]
+	GetHandleVerifier [0x00007FF776600163+3031443]
+	GetHandleVerifier [0x00007FF77634925A+184970]
+	GetHandleVerifier [0x00007FF7763508DF+215311]
+	GetHandleVerifier [0x00007FF776336F34+110436]
+	GetHandleVerifier [0x00007FF7763370E2+110866]
+	GetHandleVerifier [0x00007FF77631D4E9+5401]
+	BaseThreadInitThunk [0x00007FFA7C05E8D7+23]
+	RtlUserThreadStart [0x00007FFA7CCDC5DC+44]
+
+2025-05-05 15:35:53,594 - INFO - Searched for institution: National Defense University
+2025-05-05 15:35:55,595 - INFO - Processing page 1 for National Defense University
+2025-05-05 15:35:55,736 - INFO - Screenshot saved to screenshots\National_Defense_University_results_page1.png
+2025-05-05 15:35:55,747 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:35:55,747 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\National_Defense_University_results_page1.png
+2025-05-05 15:35:56,289 - INFO - Using standard OpenAI API
+2025-05-05 15:35:56,628 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:36:10,479 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:36:10,486 - INFO - Successfully extracted 8 profiles from the screenshot
+2025-05-05 15:36:10,486 - INFO - Added 8 profiles from National Defense University (page 1)
+2025-05-05 15:36:10,503 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:36:14,580 - INFO - Processing page 2 for National Defense University
+2025-05-05 15:36:14,718 - INFO - Screenshot saved to screenshots\National_Defense_University_results_page2.png
+2025-05-05 15:36:14,726 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:36:14,726 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\National_Defense_University_results_page2.png
+2025-05-05 15:36:14,735 - INFO - Using standard OpenAI API
+2025-05-05 15:36:14,936 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:36:34,002 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:36:34,007 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:36:34,007 - INFO - Added 9 profiles from National Defense University (page 2)
+2025-05-05 15:36:34,021 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:36:38,088 - INFO - Processing page 3 for National Defense University
+2025-05-05 15:36:38,243 - INFO - Screenshot saved to screenshots\National_Defense_University_results_page3.png
+2025-05-05 15:36:38,252 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:36:38,252 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\National_Defense_University_results_page3.png
+2025-05-05 15:36:38,261 - INFO - Using standard OpenAI API
+2025-05-05 15:36:38,464 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:37:16,310 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:37:16,311 - INFO - Successfully extracted 10 profiles from the screenshot
+2025-05-05 15:37:16,311 - INFO - Added 10 profiles from National Defense University (page 3)
+2025-05-05 15:37:16,324 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:37:20,394 - INFO - Processing page 4 for National Defense University
+2025-05-05 15:37:20,514 - INFO - Screenshot saved to screenshots\National_Defense_University_results_page4.png
+2025-05-05 15:37:20,522 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:37:20,523 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\National_Defense_University_results_page4.png
+2025-05-05 15:37:20,531 - INFO - Using standard OpenAI API
+2025-05-05 15:37:20,730 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:37:33,536 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:37:33,538 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:37:33,538 - INFO - Added 9 profiles from National Defense University (page 4)
+2025-05-05 15:37:33,554 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:37:37,615 - INFO - Processing page 5 for National Defense University
+2025-05-05 15:37:37,741 - INFO - Screenshot saved to screenshots\National_Defense_University_results_page5.png
+2025-05-05 15:37:37,749 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:37:37,749 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\National_Defense_University_results_page5.png
+2025-05-05 15:37:37,757 - INFO - Using standard OpenAI API
+2025-05-05 15:37:37,946 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:37:57,821 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:37:57,824 - INFO - Successfully extracted 10 profiles from the screenshot
+2025-05-05 15:37:57,824 - INFO - Added 10 profiles from National Defense University (page 5)
+2025-05-05 15:37:57,827 - INFO - Saved 46 profiles to output/extracted_profiles.json
+2025-05-05 15:38:00,827 - INFO - Searching for alumni of: Industrial College of the Armed Forces
+2025-05-05 15:38:13,912 - WARNING - Filter UI may have changed, trying direct search: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF77632F015+77893]
+	GetHandleVerifier [0x00007FF77632F070+77984]
+	(No symbol) [0x00007FF7760F91BA]
+	(No symbol) [0x00007FF77614F16D]
+	(No symbol) [0x00007FF77614F41C]
+	(No symbol) [0x00007FF7761A2237]
+	(No symbol) [0x00007FF77617716F]
+	(No symbol) [0x00007FF77619F07F]
+	(No symbol) [0x00007FF776176F03]
+	(No symbol) [0x00007FF776140328]
+	(No symbol) [0x00007FF776141093]
+	GetHandleVerifier [0x00007FF7765E7BDD+2931725]
+	GetHandleVerifier [0x00007FF7765E21A2+2908626]
+	GetHandleVerifier [0x00007FF776600163+3031443]
+	GetHandleVerifier [0x00007FF77634925A+184970]
+	GetHandleVerifier [0x00007FF7763508DF+215311]
+	GetHandleVerifier [0x00007FF776336F34+110436]
+	GetHandleVerifier [0x00007FF7763370E2+110866]
+	GetHandleVerifier [0x00007FF77631D4E9+5401]
+	BaseThreadInitThunk [0x00007FFA7C05E8D7+23]
+	RtlUserThreadStart [0x00007FFA7CCDC5DC+44]
+
+2025-05-05 15:38:16,172 - INFO - Searched for institution: Industrial College of the Armed Forces
+2025-05-05 15:38:18,173 - INFO - Processing page 1 for Industrial College of the Armed Forces
+2025-05-05 15:38:18,323 - INFO - Screenshot saved to screenshots\Industrial_College_of_the_Armed_Forces_results_page1.png
+2025-05-05 15:38:18,332 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:38:18,333 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Industrial_College_of_the_Armed_Forces_results_page1.png
+2025-05-05 15:38:18,341 - INFO - Using standard OpenAI API
+2025-05-05 15:38:18,544 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:38:32,548 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:38:32,552 - INFO - Successfully extracted 8 profiles from the screenshot
+2025-05-05 15:38:32,552 - INFO - Added 8 profiles from Industrial College of the Armed Forces (page 1)
+2025-05-05 15:38:32,588 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:38:36,671 - INFO - Processing page 2 for Industrial College of the Armed Forces
+2025-05-05 15:38:36,820 - INFO - Screenshot saved to screenshots\Industrial_College_of_the_Armed_Forces_results_page2.png
+2025-05-05 15:38:36,833 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:38:36,833 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Industrial_College_of_the_Armed_Forces_results_page2.png
+2025-05-05 15:38:36,841 - INFO - Using standard OpenAI API
+2025-05-05 15:38:37,038 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:38:50,671 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:38:50,673 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:38:50,674 - INFO - Added 9 profiles from Industrial College of the Armed Forces (page 2)
+2025-05-05 15:38:50,699 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:38:54,781 - INFO - Processing page 3 for Industrial College of the Armed Forces
+2025-05-05 15:38:54,926 - INFO - Screenshot saved to screenshots\Industrial_College_of_the_Armed_Forces_results_page3.png
+2025-05-05 15:38:54,934 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:38:54,934 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Industrial_College_of_the_Armed_Forces_results_page3.png
+2025-05-05 15:38:54,944 - INFO - Using standard OpenAI API
+2025-05-05 15:38:55,144 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:39:10,521 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:39:10,526 - INFO - Successfully extracted 10 profiles from the screenshot
+2025-05-05 15:39:10,527 - INFO - Added 10 profiles from Industrial College of the Armed Forces (page 3)
+2025-05-05 15:39:10,546 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:39:14,613 - INFO - Processing page 4 for Industrial College of the Armed Forces
+2025-05-05 15:39:14,773 - INFO - Screenshot saved to screenshots\Industrial_College_of_the_Armed_Forces_results_page4.png
+2025-05-05 15:39:14,782 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:39:14,782 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Industrial_College_of_the_Armed_Forces_results_page4.png
+2025-05-05 15:39:14,792 - INFO - Using standard OpenAI API
+2025-05-05 15:39:14,989 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:39:29,631 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:39:29,636 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:39:29,637 - INFO - Added 9 profiles from Industrial College of the Armed Forces (page 4)
+2025-05-05 15:39:29,663 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:39:33,749 - INFO - Processing page 5 for Industrial College of the Armed Forces
+2025-05-05 15:39:33,885 - INFO - Screenshot saved to screenshots\Industrial_College_of_the_Armed_Forces_results_page5.png
+2025-05-05 15:39:33,893 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:39:33,893 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Industrial_College_of_the_Armed_Forces_results_page5.png
+2025-05-05 15:39:33,903 - INFO - Using standard OpenAI API
+2025-05-05 15:39:34,104 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:39:47,253 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:39:47,254 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:39:47,254 - INFO - Added 9 profiles from Industrial College of the Armed Forces (page 5)
+2025-05-05 15:39:47,256 - INFO - Saved 91 profiles to output/extracted_profiles.json
+2025-05-05 15:39:50,256 - INFO - Searching for alumni of: Eisenhower School for National Security and Resource Strategy
+2025-05-05 15:40:03,784 - WARNING - Filter UI may have changed, trying direct search: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF77632F015+77893]
+	GetHandleVerifier [0x00007FF77632F070+77984]
+	(No symbol) [0x00007FF7760F91BA]
+	(No symbol) [0x00007FF77614F16D]
+	(No symbol) [0x00007FF77614F41C]
+	(No symbol) [0x00007FF7761A2237]
+	(No symbol) [0x00007FF77617716F]
+	(No symbol) [0x00007FF77619F07F]
+	(No symbol) [0x00007FF776176F03]
+	(No symbol) [0x00007FF776140328]
+	(No symbol) [0x00007FF776141093]
+	GetHandleVerifier [0x00007FF7765E7BDD+2931725]
+	GetHandleVerifier [0x00007FF7765E21A2+2908626]
+	GetHandleVerifier [0x00007FF776600163+3031443]
+	GetHandleVerifier [0x00007FF77634925A+184970]
+	GetHandleVerifier [0x00007FF7763508DF+215311]
+	GetHandleVerifier [0x00007FF776336F34+110436]
+	GetHandleVerifier [0x00007FF7763370E2+110866]
+	GetHandleVerifier [0x00007FF77631D4E9+5401]
+	BaseThreadInitThunk [0x00007FFA7C05E8D7+23]
+	RtlUserThreadStart [0x00007FFA7CCDC5DC+44]
+
+2025-05-05 15:40:06,115 - INFO - Searched for institution: Eisenhower School for National Security and Resource Strategy
+2025-05-05 15:40:08,118 - INFO - Processing page 1 for Eisenhower School for National Security and Resource Strategy
+2025-05-05 15:40:08,256 - INFO - Screenshot saved to screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page1.png
+2025-05-05 15:40:08,264 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:40:08,264 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page1.png
+2025-05-05 15:40:08,274 - INFO - Using standard OpenAI API
+2025-05-05 15:40:08,472 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:40:18,287 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:40:18,290 - INFO - Successfully extracted 8 profiles from the screenshot
+2025-05-05 15:40:18,291 - INFO - Added 8 profiles from Eisenhower School for National Security and Resource Strategy (page 1)
+2025-05-05 15:40:18,316 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:40:22,396 - INFO - Processing page 2 for Eisenhower School for National Security and Resource Strategy
+2025-05-05 15:40:22,527 - INFO - Screenshot saved to screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page2.png
+2025-05-05 15:40:22,537 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:40:22,537 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page2.png
+2025-05-05 15:40:22,546 - INFO - Using standard OpenAI API
+2025-05-05 15:40:22,746 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:40:41,537 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:40:41,539 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:40:41,540 - INFO - Added 9 profiles from Eisenhower School for National Security and Resource Strategy (page 2)
+2025-05-05 15:40:41,558 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:40:45,632 - INFO - Processing page 3 for Eisenhower School for National Security and Resource Strategy
+2025-05-05 15:40:45,782 - INFO - Screenshot saved to screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page3.png
+2025-05-05 15:40:45,790 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:40:45,790 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page3.png
+2025-05-05 15:40:45,801 - INFO - Using standard OpenAI API
+2025-05-05 15:40:46,012 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:41:01,845 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:41:01,854 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:41:01,854 - INFO - Added 9 profiles from Eisenhower School for National Security and Resource Strategy (page 3)
+2025-05-05 15:41:01,870 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:41:05,945 - INFO - Processing page 4 for Eisenhower School for National Security and Resource Strategy
+2025-05-05 15:41:06,067 - INFO - Screenshot saved to screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page4.png
+2025-05-05 15:41:06,075 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:41:06,076 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page4.png
+2025-05-05 15:41:06,084 - INFO - Using standard OpenAI API
+2025-05-05 15:41:06,280 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:41:27,305 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:41:27,310 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:41:27,311 - INFO - Added 9 profiles from Eisenhower School for National Security and Resource Strategy (page 4)
+2025-05-05 15:41:27,333 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:41:31,419 - INFO - Processing page 5 for Eisenhower School for National Security and Resource Strategy
+2025-05-05 15:41:31,545 - INFO - Screenshot saved to screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page5.png
+2025-05-05 15:41:31,553 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:41:31,553 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Eisenhower_School_for_National_Security_and_Resource_Strategy_results_page5.png
+2025-05-05 15:41:31,562 - INFO - Using standard OpenAI API
+2025-05-05 15:41:31,765 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:41:51,382 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:41:51,384 - INFO - Successfully extracted 10 profiles from the screenshot
+2025-05-05 15:41:51,385 - INFO - Added 10 profiles from Eisenhower School for National Security and Resource Strategy (page 5)
+2025-05-05 15:41:51,390 - INFO - Saved 136 profiles to output/extracted_profiles.json
+2025-05-05 15:41:54,391 - INFO - Searching for alumni of: Information Resources Management College
+2025-05-05 15:42:07,489 - WARNING - Filter UI may have changed, trying direct search: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF77632F015+77893]
+	GetHandleVerifier [0x00007FF77632F070+77984]
+	(No symbol) [0x00007FF7760F91BA]
+	(No symbol) [0x00007FF77614F16D]
+	(No symbol) [0x00007FF77614F41C]
+	(No symbol) [0x00007FF7761A2237]
+	(No symbol) [0x00007FF77617716F]
+	(No symbol) [0x00007FF77619F07F]
+	(No symbol) [0x00007FF776176F03]
+	(No symbol) [0x00007FF776140328]
+	(No symbol) [0x00007FF776141093]
+	GetHandleVerifier [0x00007FF7765E7BDD+2931725]
+	GetHandleVerifier [0x00007FF7765E21A2+2908626]
+	GetHandleVerifier [0x00007FF776600163+3031443]
+	GetHandleVerifier [0x00007FF77634925A+184970]
+	GetHandleVerifier [0x00007FF7763508DF+215311]
+	GetHandleVerifier [0x00007FF776336F34+110436]
+	GetHandleVerifier [0x00007FF7763370E2+110866]
+	GetHandleVerifier [0x00007FF77631D4E9+5401]
+	BaseThreadInitThunk [0x00007FFA7C05E8D7+23]
+	RtlUserThreadStart [0x00007FFA7CCDC5DC+44]
+
+2025-05-05 15:42:09,749 - INFO - Searched for institution: Information Resources Management College
+2025-05-05 15:42:11,750 - INFO - Processing page 1 for Information Resources Management College
+2025-05-05 15:42:11,879 - INFO - Screenshot saved to screenshots\Information_Resources_Management_College_results_page1.png
+2025-05-05 15:42:11,888 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:42:11,889 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Information_Resources_Management_College_results_page1.png
+2025-05-05 15:42:11,897 - INFO - Using standard OpenAI API
+2025-05-05 15:42:12,102 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:42:22,213 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:42:22,215 - INFO - Successfully extracted 7 profiles from the screenshot
+2025-05-05 15:42:22,215 - INFO - Added 7 profiles from Information Resources Management College (page 1)
+2025-05-05 15:42:22,243 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:42:26,339 - INFO - Processing page 2 for Information Resources Management College
+2025-05-05 15:42:26,467 - INFO - Screenshot saved to screenshots\Information_Resources_Management_College_results_page2.png
+2025-05-05 15:42:26,476 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:42:26,476 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Information_Resources_Management_College_results_page2.png
+2025-05-05 15:42:26,485 - INFO - Using standard OpenAI API
+2025-05-05 15:42:26,683 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:42:40,993 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:42:41,028 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:42:41,029 - INFO - Added 9 profiles from Information Resources Management College (page 2)
+2025-05-05 15:42:41,048 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:42:45,122 - INFO - Processing page 3 for Information Resources Management College
+2025-05-05 15:42:45,268 - INFO - Screenshot saved to screenshots\Information_Resources_Management_College_results_page3.png
+2025-05-05 15:42:45,276 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:42:45,277 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Information_Resources_Management_College_results_page3.png
+2025-05-05 15:42:45,288 - INFO - Using standard OpenAI API
+2025-05-05 15:42:45,485 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:43:04,512 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:43:04,514 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:43:04,515 - INFO - Added 9 profiles from Information Resources Management College (page 3)
+2025-05-05 15:43:04,535 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:43:08,607 - INFO - Processing page 4 for Information Resources Management College
+2025-05-05 15:43:08,735 - INFO - Screenshot saved to screenshots\Information_Resources_Management_College_results_page4.png
+2025-05-05 15:43:08,743 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:43:08,744 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Information_Resources_Management_College_results_page4.png
+2025-05-05 15:43:08,752 - INFO - Using standard OpenAI API
+2025-05-05 15:43:08,949 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:43:24,456 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:43:24,457 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:43:24,457 - INFO - Added 9 profiles from Information Resources Management College (page 4)
+2025-05-05 15:43:24,477 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:43:28,541 - INFO - Processing page 5 for Information Resources Management College
+2025-05-05 15:43:28,675 - INFO - Screenshot saved to screenshots\Information_Resources_Management_College_results_page5.png
+2025-05-05 15:43:28,684 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:43:28,684 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Information_Resources_Management_College_results_page5.png
+2025-05-05 15:43:28,693 - INFO - Using standard OpenAI API
+2025-05-05 15:43:28,889 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:43:42,209 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:43:42,213 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:43:42,213 - INFO - Added 9 profiles from Information Resources Management College (page 5)
+2025-05-05 15:43:42,216 - INFO - Saved 179 profiles to output/extracted_profiles.json
+2025-05-05 15:43:45,217 - INFO - Searching for alumni of: Joint Forces Staff College
+2025-05-05 15:43:58,064 - WARNING - Filter UI may have changed, trying direct search: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF77632F015+77893]
+	GetHandleVerifier [0x00007FF77632F070+77984]
+	(No symbol) [0x00007FF7760F91BA]
+	(No symbol) [0x00007FF77614F16D]
+	(No symbol) [0x00007FF77614F41C]
+	(No symbol) [0x00007FF7761A2237]
+	(No symbol) [0x00007FF77617716F]
+	(No symbol) [0x00007FF77619F07F]
+	(No symbol) [0x00007FF776176F03]
+	(No symbol) [0x00007FF776140328]
+	(No symbol) [0x00007FF776141093]
+	GetHandleVerifier [0x00007FF7765E7BDD+2931725]
+	GetHandleVerifier [0x00007FF7765E21A2+2908626]
+	GetHandleVerifier [0x00007FF776600163+3031443]
+	GetHandleVerifier [0x00007FF77634925A+184970]
+	GetHandleVerifier [0x00007FF7763508DF+215311]
+	GetHandleVerifier [0x00007FF776336F34+110436]
+	GetHandleVerifier [0x00007FF7763370E2+110866]
+	GetHandleVerifier [0x00007FF77631D4E9+5401]
+	BaseThreadInitThunk [0x00007FFA7C05E8D7+23]
+	RtlUserThreadStart [0x00007FFA7CCDC5DC+44]
+
+2025-05-05 15:44:00,310 - INFO - Searched for institution: Joint Forces Staff College
+2025-05-05 15:44:02,310 - INFO - Processing page 1 for Joint Forces Staff College
+2025-05-05 15:44:02,439 - INFO - Screenshot saved to screenshots\Joint_Forces_Staff_College_results_page1.png
+2025-05-05 15:44:02,447 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:44:02,448 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Joint_Forces_Staff_College_results_page1.png
+2025-05-05 15:44:02,456 - INFO - Using standard OpenAI API
+2025-05-05 15:44:02,653 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:44:13,810 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:44:13,814 - INFO - Successfully extracted 8 profiles from the screenshot
+2025-05-05 15:44:13,814 - INFO - Added 8 profiles from Joint Forces Staff College (page 1)
+2025-05-05 15:44:13,834 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:44:17,900 - INFO - Processing page 2 for Joint Forces Staff College
+2025-05-05 15:44:18,034 - INFO - Screenshot saved to screenshots\Joint_Forces_Staff_College_results_page2.png
+2025-05-05 15:44:18,043 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:44:18,043 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Joint_Forces_Staff_College_results_page2.png
+2025-05-05 15:44:18,051 - INFO - Using standard OpenAI API
+2025-05-05 15:44:18,250 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:45:18,656 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 520 "
+2025-05-05 15:45:18,657 - INFO - Retrying request to /chat/completions in 0.488780 seconds
+2025-05-05 15:45:36,531 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:45:36,535 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:45:36,535 - INFO - Added 9 profiles from Joint Forces Staff College (page 2)
+2025-05-05 15:45:36,548 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:45:40,622 - INFO - Processing page 3 for Joint Forces Staff College
+2025-05-05 15:45:40,752 - INFO - Screenshot saved to screenshots\Joint_Forces_Staff_College_results_page3.png
+2025-05-05 15:45:40,760 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:45:40,760 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Joint_Forces_Staff_College_results_page3.png
+2025-05-05 15:45:40,771 - INFO - Using standard OpenAI API
+2025-05-05 15:45:40,973 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:45:57,895 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:45:57,904 - INFO - Successfully extracted 9 profiles from the screenshot
+2025-05-05 15:45:57,904 - INFO - Added 9 profiles from Joint Forces Staff College (page 3)
+2025-05-05 15:45:57,918 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:46:01,984 - INFO - Processing page 4 for Joint Forces Staff College
+2025-05-05 15:46:02,117 - INFO - Screenshot saved to screenshots\Joint_Forces_Staff_College_results_page4.png
+2025-05-05 15:46:02,125 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:46:02,126 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Joint_Forces_Staff_College_results_page4.png
+2025-05-05 15:46:02,134 - INFO - Using standard OpenAI API
+2025-05-05 15:46:02,329 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:46:27,301 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:46:27,302 - INFO - Successfully extracted 10 profiles from the screenshot
+2025-05-05 15:46:27,302 - INFO - Added 10 profiles from Joint Forces Staff College (page 4)
+2025-05-05 15:46:27,318 - INFO - Found 'Next' button with selector: button.artdeco-pagination__button--next
+2025-05-05 15:46:31,389 - INFO - Processing page 5 for Joint Forces Staff College
+2025-05-05 15:46:31,511 - INFO - Screenshot saved to screenshots\Joint_Forces_Staff_College_results_page5.png
+2025-05-05 15:46:31,519 - INFO - Extracted 0 profile URLs using JavaScript
+2025-05-05 15:46:31,520 - INFO - Sending full page screenshot to OpenAI for analysis: screenshots\Joint_Forces_Staff_College_results_page5.png
+2025-05-05 15:46:31,528 - INFO - Using standard OpenAI API
+2025-05-05 15:46:31,725 - INFO - Calling OpenAI API with model: gpt-4.1-mini
+2025-05-05 15:46:49,849 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-05 15:46:49,852 - INFO - Successfully extracted 10 profiles from the screenshot
+2025-05-05 15:46:49,852 - INFO - Added 10 profiles from Joint Forces Staff College (page 5)
+2025-05-05 15:46:49,855 - INFO - Saved 225 profiles to output/extracted_profiles.json
+2025-05-05 15:46:52,861 - INFO - Saved 225 profiles to output/extracted_profiles.json
