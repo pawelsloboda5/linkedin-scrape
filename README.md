@@ -104,9 +104,9 @@ You can set these environment variables to avoid entering them each time:
     "job_title": "Director of Operations",
     "company": "Example Company",
     "location": "Washington, DC",
-    "education": "National Defense University",
+    "education": "Harborview School of Business and Economics",
     "connections": "500+",
-    "searched_institution": "National Defense University",
+    "searched_institution": "Harborview School of Business and Economics",
     "page_found": 1
   }
   ```
