@@ -55,11 +55,11 @@ Update the list of target institutions in `config.py`:
 
 ```python
 TARGET_INSTITUTIONS = [
-    "National Defense University",
-    "Industrial College of the Armed Forces",
-    "Eisenhower School for National Security and Resource Strategy",
-    "Information Resources Management College",
-    "Joint Forces Staff College"
+    "Northern Lakes Liberal Arts College",
+    "Harborview School of Business and Economics",
+    "Riverside Institute of Engineering and Technology",
+    "Meadowbrook College of Agricultural Sciences",
+    "Crescent City Culinary and Hospitality Academy"
 ]
 ```
 
@@ -104,9 +104,9 @@ You can set these environment variables to avoid entering them each time:
     "job_title": "Director of Operations",
     "company": "Example Company",
     "location": "Washington, DC",
-    "education": "National Defense University",
+    "education": "Harborview School of Business and Economics",
     "connections": "500+",
-    "searched_institution": "National Defense University",
+    "searched_institution": "Harborview School of Business and Economics",
     "page_found": 1
   }
   ```
