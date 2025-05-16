@@ -19,6 +19,8 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from datetime import datetime
+from typing import List, Dict, Any
 
 # Configure matplotlib to use a non-interactive backend (avoids Tk dependency)
 import matplotlib
@@ -27,14 +29,20 @@ matplotlib.use("Agg")
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from dateutil.parser import parse as date_parse
 
 # ─────────────────────── paths ──────────────────────────────────────────
-RAW_CSV   = Path("output/alumni_linkedin_details.csv")
-CLEAN_CSV = Path("output/alumni_linkedin_details_clean.csv")
-PLOT_DIR  = Path("output/plots")
+RAW_CSV     = Path("output/alumni_linkedin_details.csv")
+BASE_CSV    = Path("output/alumni_linkedin_details_clean.csv")
+EXP_CSV     = Path("output/alumni_experience.csv")
+EDU_CSV     = Path("output/alumni_education.csv")
+LIC_CSV     = Path("output/alumni_licenses.csv")
+VOL_CSV     = Path("output/alumni_volunteering.csv")
+
+PLOT_DIR    = Path("output/plots")
 
 # Ensure output directories exist
-CLEAN_CSV.parent.mkdir(parents=True, exist_ok=True)
+BASE_CSV.parent.mkdir(parents=True, exist_ok=True)
 PLOT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ─────────────────────── cleaning helpers ───────────────────────────────
@@ -61,6 +69,76 @@ def _clean_connections(val: str | int | float) -> int | None:
 
 
 # ─────────────────────── main cleaning routine ──────────────────────────
+
+def _safe_json_loads(raw: str) -> Any:
+    """Attempt to json.loads even when single quotes used."""
+    import json
+    try:
+        return json.loads(raw)
+    except Exception:
+        try:
+            fixed = re.sub(r"'", '"', raw)
+            return json.loads(fixed)
+        except Exception:
+            return None
+
+
+def _parse_date(token: str) -> datetime | None:
+    token = token.strip()
+    if token.lower() in {"present", "current", "now"}:
+        return None
+    try:
+        dt = date_parse(token, default=datetime(1900, 1, 1))
+        return dt
+    except Exception:
+        return None
+
+
+def _split_date_range(range_str: str) -> tuple[datetime | None, datetime | None]:
+    parts = [p.strip() for p in re.split(r"[–-]", range_str, maxsplit=1)]
+    if len(parts) == 2:
+        return _parse_date(parts[0]), _parse_date(parts[1])
+    return _parse_date(parts[0]), None
+
+
+def _explode_series(name: str, series: pd.Series) -> pd.DataFrame:
+    """Turn semicolon-separated strings into long form with seq index."""
+    rows: List[Dict[str, Any]] = []
+    for link, cell in series.items():
+        if pd.isna(cell) or not str(cell).strip():
+            continue
+        items = [i.strip() for i in str(cell).split("; ") if i.strip()]
+        for idx, itm in enumerate(items, start=1):
+            rows.append({"linkedin_profile": link, "seq": idx, name: itm})
+    return pd.DataFrame(rows)
+
+
+def _parse_experience(df: pd.DataFrame) -> pd.DataFrame:
+    rows: List[Dict[str, Any]] = []
+    for link, cell in df["experience"].items():
+        if pd.isna(cell) or not str(cell).strip():
+            continue
+        items = [i.strip() for i in str(cell).split("; ") if i.strip()]
+        for seq, item in enumerate(items, start=1):
+            m = re.match(r"(?P<title>.*?)\s*@\s*(?P<company>.*?)\s*[–-]\s*(?P<dates>.*)", item)
+            if m:
+                title   = m.group("title").strip()
+                company = m.group("company").strip()
+                date_rng= m.group("dates").strip()
+                start_d, end_d = _split_date_range(date_rng)
+            else:
+                title = company = item
+                start_d = end_d = None
+            rows.append({
+                "linkedin_profile": link,
+                "seq": seq,
+                "title": title,
+                "company": company,
+                "start_date": start_d,
+                "end_date": end_d,
+            })
+    return pd.DataFrame(rows)
+
 
 def load_and_clean() -> pd.DataFrame:
     if not RAW_CSV.exists():
@@ -89,6 +167,16 @@ def load_and_clean() -> pd.DataFrame:
 
     # 5️⃣ (optional) sort for nicer appearance
     df = df.sort_values(by=["lastname", "firstname"]).reset_index(drop=True)
+
+    # 6️⃣ split location
+    loc_split = df["location"].str.split(r",\s*", expand=True)
+    if not loc_split.empty:
+        df["city"]     = loc_split[0]
+        df["state"]    = loc_split[1] if loc_split.shape[1] > 1 else pd.NA
+        df["country"]  = loc_split[2] if loc_split.shape[1] > 2 else pd.NA
+
+    # 7️⃣ replace blank strings with NA
+    df.replace({"": pd.NA}, inplace=True)
 
     return df
 
@@ -124,12 +212,28 @@ def main() -> None:
     clean_df = load_and_clean()
 
     # Export to clean CSV (UTF-8 w/out BOM for Excel compatibility)
-    clean_df.to_csv(CLEAN_CSV, index=False, encoding="utf-8")
+    clean_df.to_csv(BASE_CSV, index=False, encoding="utf-8")
     try:
-        rel_path = CLEAN_CSV.resolve().relative_to(Path.cwd())
+        rel_path = BASE_CSV.resolve().relative_to(Path.cwd())
     except ValueError:
-        rel_path = CLEAN_CSV.resolve()
+        rel_path = BASE_CSV.resolve()
     print(f"✔ Clean CSV written → {rel_path}")
+
+    # ───────── child tables ─────────
+    print("Normalizing experience/education/licensing/volunteering …")
+    base_idx = clean_df.set_index("linkedin_profile")
+
+    exp_df = _parse_experience(base_idx)
+    edu_df = _explode_series("education", base_idx["education"])
+    lic_df = _explode_series("licenses",  base_idx["licenses"])
+    vol_df = _explode_series("volunteering", base_idx["volunteering"])
+
+    exp_df.to_csv(EXP_CSV, index=False)
+    edu_df.to_csv(EDU_CSV, index=False)
+    lic_df.to_csv(LIC_CSV, index=False)
+    vol_df.to_csv(VOL_CSV, index=False)
+
+    print("✔ Child tables saved (experience, education, licenses, volunteering)")
 
     # ───────── generate fun stats ─────────
     print("Generating plots …")
@@ -145,7 +249,7 @@ def main() -> None:
     print(f"✔ Plots stored in {plots_rel} (PNG files)")
 
     # ───────── embed into Excel ─────────
-    excel_file = CLEAN_CSV.with_suffix(".xlsx")
+    excel_file = BASE_CSV.with_suffix(".xlsx")
     print("Creating Excel workbook with embedded charts …")
     try:
         with pd.ExcelWriter(excel_file, engine="xlsxwriter") as writer:
