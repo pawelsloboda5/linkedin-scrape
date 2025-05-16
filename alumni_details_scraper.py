@@ -62,8 +62,8 @@ PROMPT = (
     '{ "current_title":"","current_company":"",'
     '  "second_title":"","second_company":"",'
     '  "third_title":"","third_company":"",'
-    '  "location":"","connections":"","headline":"",'
-    '  "experience":[], "education":[], "licenses":[], "volunteering":[] }'
+    '  "location":"","headline":"",'
+    '  "experience":[], "education":[]}'
 )
 
 logging.basicConfig(
